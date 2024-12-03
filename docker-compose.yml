@@ -1,0 +1,18 @@
+services:
+  node-server:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - VERSION=${VERSION}
+  node-server2:
+    build: .
+    ports:
+      - 3001:3000
+    environment:
+      - VERSION=${VERSION}
+  redis:
+    image: "redis:alpine"
+    ports:
+      - 6379
+  
